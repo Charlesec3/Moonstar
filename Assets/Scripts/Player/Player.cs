@@ -94,6 +94,15 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject pauseMenu;
     public bool paused = false;
+
+    public delegate void OnPlayerTakeDamage(float damage);
+    public static event OnPlayerTakeDamage onPlayerTakeDamage;
+
+    public delegate void OnPlayerGainHP(float damage);
+    public static event OnPlayerGainHP onPlayerGainHP;
+
+    public delegate void OnGamePause(bool isPaused);
+    public static event OnGamePause onGamePause;
    
 
     void Awake()
@@ -268,8 +277,13 @@ public class Player : MonoBehaviour
     {
         paused = !paused;
 
-        if(paused == true)
+        if(onGamePause != null)
         {
+            onGamePause(paused);
+        }
+
+        if(paused == true)
+        {            
             Time.timeScale = 0;
             //canMove = false;
             //canCrouch = false;
@@ -681,22 +695,9 @@ public class Player : MonoBehaviour
 
         knockBackCounter = knockBackTotalTime;
 
-        if(HPMarkers.Count > 0)
+        if(onPlayerTakeDamage != null)
         {
-            for(int i = 0; i < dmg; i++)
-            {
-                //Destroy(HPMarkers[0].gameObject);
-                //HPMarkers.Remove(HPMarkers[0]);
-
-                for(int j = 0; j < HPMarkers.Count; j++)
-                {
-                    if(HPMarkers[j].activeSelf == true)
-                    {
-                        HPMarkers[j].SetActive(false);
-                        break;
-                    }
-                }
-            }
+            onPlayerTakeDamage(dmg);
         }
         
     }
@@ -731,22 +732,9 @@ public class Player : MonoBehaviour
 
         StartCoroutine(damageColor());
 
-        if(HPMarkers.Count > 0)
+        if(onPlayerTakeDamage != null)
         {
-            for(int i = 0; i < dmg; i++)
-            {
-                //Destroy(HPMarkers[0].gameObject);
-                //HPMarkers.Remove(HPMarkers[0]);
-
-                for(int j = 0; j < HPMarkers.Count; j++)
-                {
-                    if(HPMarkers[j].activeSelf == true)
-                    {
-                        HPMarkers[j].SetActive(false);
-                        break;
-                    }
-                }
-            }
+            onPlayerTakeDamage(dmg);
         }
     }
     /// <summary>
@@ -797,22 +785,9 @@ public class Player : MonoBehaviour
 
         knockBackCounter = knockBackTotalTime;
 
-        if(HPMarkers.Count > 0)
+        if(onPlayerTakeDamage != null)
         {
-            for(int i = 0; i < dmg; i++)
-            {
-                //Destroy(HPMarkers[0].gameObject);
-                //HPMarkers.Remove(HPMarkers[0]);
-
-                for(int j = 0; j < HPMarkers.Count; j++)
-                {
-                    if(HPMarkers[j].activeSelf == true)
-                    {
-                        HPMarkers[j].SetActive(false);
-                        break;
-                    }
-                }
-            }
+            onPlayerTakeDamage(dmg);
         }
     }
 
@@ -894,16 +869,9 @@ public class Player : MonoBehaviour
             currentHP = maxHP;
         }
 
-        for(int i = 0; i < hp; i++)
+        if(onPlayerGainHP != null)
         {
-            for(int j = HPMarkers.Count - 1; j > -1; j--)
-            {
-                if(HPMarkers[j].activeSelf == false)
-                {
-                    HPMarkers[j].SetActive(true);
-                    break;
-                }
-            }
+            onPlayerGainHP(hp);
         }
     }
 
