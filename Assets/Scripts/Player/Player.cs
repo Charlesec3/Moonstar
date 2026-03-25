@@ -392,7 +392,7 @@ public class Player : MonoBehaviour
 
     void crouch(bool b)
     {
-        if(paused == false)
+        if(paused == false && canCrouch == true)
         {
             if(playerIsGrounded() == true && climbingUp == false)
         {
