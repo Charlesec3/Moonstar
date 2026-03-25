@@ -352,6 +352,336 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""GamepadControls"",
+            ""id"": ""30b80086-6ece-46fb-af26-4db079573d65"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""f32cc17d-2649-426c-b116-064adfb286ee"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""a69ba022-b0a5-4319-8ebf-f56a03b3de9f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StopJump"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3a6006c-21ba-489a-8af6-4f35944ce32b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""61126a36-7e44-4136-9c5a-770aa930af22"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Stand"",
+                    ""type"": ""Button"",
+                    ""id"": ""444745db-5f12-4612-a8a1-22b59bbd86cd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""9069d8e9-7425-41f4-ae11-a90e052ae9c1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DrawSword"",
+                    ""type"": ""Button"",
+                    ""id"": ""3d14dda7-cad9-4b19-a53a-12f9a4245d3c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DrawShield"",
+                    ""type"": ""Button"",
+                    ""id"": ""438a54c6-90f2-4b34-babb-10b5e472f098"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Block"",
+                    ""type"": ""Button"",
+                    ""id"": ""a23ce414-6cf3-4b14-9358-be2d878664e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StopBlock"",
+                    ""type"": ""Button"",
+                    ""id"": ""86a0ffd4-29e9-4bb3-a6c2-8d796f03271f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Moonwalk"",
+                    ""type"": ""Button"",
+                    ""id"": ""523797ed-7c28-4b1d-8b07-3f144a61ea98"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Stop Moonwalk"",
+                    ""type"": ""Button"",
+                    ""id"": ""fb22eb48-a7a9-47de-ae9e-050b75bec5da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Enable Look"",
+                    ""type"": ""Button"",
+                    ""id"": ""d68b535a-06b8-4eae-9d34-ec04206969bc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Stop Look"",
+                    ""type"": ""Button"",
+                    ""id"": ""0a57c946-bdbd-48bf-ba8b-fe24348d8008"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""30d3df3b-fc9d-416b-b982-0087cc5442e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""AD"",
+                    ""id"": ""58828473-8e14-453f-910b-eaf9375670b3"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""22f84c17-ce71-40e5-8933-daa9669793b3"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""531589ad-41aa-4eb8-9c14-add472013cad"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5b3a924-1f1b-428c-830c-57192b227ab1"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1af375a7-2431-42b2-b87c-156eb01226a1"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""24d59e1f-e58b-4c08-b338-3c661777ba27"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stand"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec0c2c52-22e6-4437-9436-bb8a08c22e7d"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02245411-b749-46f6-8294-ba6693958eea"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DrawSword"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b15e36a6-0c10-461f-94f6-7e6c51eb9d10"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DrawShield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74018d97-add7-4354-8314-e40399b58322"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Block"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""858830e2-8cb8-40f9-98e6-298b7d5f1513"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StopBlock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8fa43ec8-095a-469b-b220-9ef8befc462b"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Moonwalk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7901be2e-ed54-4680-92cb-cf2ef32fb6a4"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stop Moonwalk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b5949ef7-a81a-4aec-87cd-3b25ddccc2f8"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StopJump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e38282fa-07b1-4945-bec8-d2e7978f6f36"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enable Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6d41bf88-924b-467d-8e5c-40cef2f99f7e"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Stop Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e934e0e-29a7-4fdc-b335-16a6427c1289"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -373,6 +703,23 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_KeyboardControls_EnableLook = m_KeyboardControls.FindAction("Enable Look", throwIfNotFound: true);
         m_KeyboardControls_StopLook = m_KeyboardControls.FindAction("Stop Look", throwIfNotFound: true);
         m_KeyboardControls_Pause = m_KeyboardControls.FindAction("Pause", throwIfNotFound: true);
+        // GamepadControls
+        m_GamepadControls = asset.FindActionMap("GamepadControls", throwIfNotFound: true);
+        m_GamepadControls_Movement = m_GamepadControls.FindAction("Movement", throwIfNotFound: true);
+        m_GamepadControls_Jump = m_GamepadControls.FindAction("Jump", throwIfNotFound: true);
+        m_GamepadControls_StopJump = m_GamepadControls.FindAction("StopJump", throwIfNotFound: true);
+        m_GamepadControls_Crouch = m_GamepadControls.FindAction("Crouch", throwIfNotFound: true);
+        m_GamepadControls_Stand = m_GamepadControls.FindAction("Stand", throwIfNotFound: true);
+        m_GamepadControls_Attack = m_GamepadControls.FindAction("Attack", throwIfNotFound: true);
+        m_GamepadControls_DrawSword = m_GamepadControls.FindAction("DrawSword", throwIfNotFound: true);
+        m_GamepadControls_DrawShield = m_GamepadControls.FindAction("DrawShield", throwIfNotFound: true);
+        m_GamepadControls_Block = m_GamepadControls.FindAction("Block", throwIfNotFound: true);
+        m_GamepadControls_StopBlock = m_GamepadControls.FindAction("StopBlock", throwIfNotFound: true);
+        m_GamepadControls_Moonwalk = m_GamepadControls.FindAction("Moonwalk", throwIfNotFound: true);
+        m_GamepadControls_StopMoonwalk = m_GamepadControls.FindAction("Stop Moonwalk", throwIfNotFound: true);
+        m_GamepadControls_EnableLook = m_GamepadControls.FindAction("Enable Look", throwIfNotFound: true);
+        m_GamepadControls_StopLook = m_GamepadControls.FindAction("Stop Look", throwIfNotFound: true);
+        m_GamepadControls_Pause = m_GamepadControls.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -573,7 +920,170 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         }
     }
     public KeyboardControlsActions @KeyboardControls => new KeyboardControlsActions(this);
+
+    // GamepadControls
+    private readonly InputActionMap m_GamepadControls;
+    private IGamepadControlsActions m_GamepadControlsActionsCallbackInterface;
+    private readonly InputAction m_GamepadControls_Movement;
+    private readonly InputAction m_GamepadControls_Jump;
+    private readonly InputAction m_GamepadControls_StopJump;
+    private readonly InputAction m_GamepadControls_Crouch;
+    private readonly InputAction m_GamepadControls_Stand;
+    private readonly InputAction m_GamepadControls_Attack;
+    private readonly InputAction m_GamepadControls_DrawSword;
+    private readonly InputAction m_GamepadControls_DrawShield;
+    private readonly InputAction m_GamepadControls_Block;
+    private readonly InputAction m_GamepadControls_StopBlock;
+    private readonly InputAction m_GamepadControls_Moonwalk;
+    private readonly InputAction m_GamepadControls_StopMoonwalk;
+    private readonly InputAction m_GamepadControls_EnableLook;
+    private readonly InputAction m_GamepadControls_StopLook;
+    private readonly InputAction m_GamepadControls_Pause;
+    public struct GamepadControlsActions
+    {
+        private @PlayerController m_Wrapper;
+        public GamepadControlsActions(@PlayerController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_GamepadControls_Movement;
+        public InputAction @Jump => m_Wrapper.m_GamepadControls_Jump;
+        public InputAction @StopJump => m_Wrapper.m_GamepadControls_StopJump;
+        public InputAction @Crouch => m_Wrapper.m_GamepadControls_Crouch;
+        public InputAction @Stand => m_Wrapper.m_GamepadControls_Stand;
+        public InputAction @Attack => m_Wrapper.m_GamepadControls_Attack;
+        public InputAction @DrawSword => m_Wrapper.m_GamepadControls_DrawSword;
+        public InputAction @DrawShield => m_Wrapper.m_GamepadControls_DrawShield;
+        public InputAction @Block => m_Wrapper.m_GamepadControls_Block;
+        public InputAction @StopBlock => m_Wrapper.m_GamepadControls_StopBlock;
+        public InputAction @Moonwalk => m_Wrapper.m_GamepadControls_Moonwalk;
+        public InputAction @StopMoonwalk => m_Wrapper.m_GamepadControls_StopMoonwalk;
+        public InputAction @EnableLook => m_Wrapper.m_GamepadControls_EnableLook;
+        public InputAction @StopLook => m_Wrapper.m_GamepadControls_StopLook;
+        public InputAction @Pause => m_Wrapper.m_GamepadControls_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_GamepadControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GamepadControlsActions set) { return set.Get(); }
+        public void SetCallbacks(IGamepadControlsActions instance)
+        {
+            if (m_Wrapper.m_GamepadControlsActionsCallbackInterface != null)
+            {
+                @Movement.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnMovement;
+                @Jump.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnJump;
+                @StopJump.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopJump;
+                @StopJump.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopJump;
+                @StopJump.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopJump;
+                @Crouch.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnCrouch;
+                @Stand.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStand;
+                @Stand.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStand;
+                @Stand.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStand;
+                @Attack.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnAttack;
+                @DrawSword.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnDrawSword;
+                @DrawSword.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnDrawSword;
+                @DrawSword.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnDrawSword;
+                @DrawShield.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnDrawShield;
+                @DrawShield.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnDrawShield;
+                @DrawShield.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnDrawShield;
+                @Block.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnBlock;
+                @Block.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnBlock;
+                @Block.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnBlock;
+                @StopBlock.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopBlock;
+                @StopBlock.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopBlock;
+                @StopBlock.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopBlock;
+                @Moonwalk.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnMoonwalk;
+                @Moonwalk.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnMoonwalk;
+                @Moonwalk.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnMoonwalk;
+                @StopMoonwalk.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopMoonwalk;
+                @StopMoonwalk.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopMoonwalk;
+                @StopMoonwalk.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopMoonwalk;
+                @EnableLook.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnEnableLook;
+                @EnableLook.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnEnableLook;
+                @EnableLook.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnEnableLook;
+                @StopLook.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopLook;
+                @StopLook.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopLook;
+                @StopLook.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnStopLook;
+                @Pause.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnPause;
+            }
+            m_Wrapper.m_GamepadControlsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @StopJump.started += instance.OnStopJump;
+                @StopJump.performed += instance.OnStopJump;
+                @StopJump.canceled += instance.OnStopJump;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
+                @Stand.started += instance.OnStand;
+                @Stand.performed += instance.OnStand;
+                @Stand.canceled += instance.OnStand;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
+                @DrawSword.started += instance.OnDrawSword;
+                @DrawSword.performed += instance.OnDrawSword;
+                @DrawSword.canceled += instance.OnDrawSword;
+                @DrawShield.started += instance.OnDrawShield;
+                @DrawShield.performed += instance.OnDrawShield;
+                @DrawShield.canceled += instance.OnDrawShield;
+                @Block.started += instance.OnBlock;
+                @Block.performed += instance.OnBlock;
+                @Block.canceled += instance.OnBlock;
+                @StopBlock.started += instance.OnStopBlock;
+                @StopBlock.performed += instance.OnStopBlock;
+                @StopBlock.canceled += instance.OnStopBlock;
+                @Moonwalk.started += instance.OnMoonwalk;
+                @Moonwalk.performed += instance.OnMoonwalk;
+                @Moonwalk.canceled += instance.OnMoonwalk;
+                @StopMoonwalk.started += instance.OnStopMoonwalk;
+                @StopMoonwalk.performed += instance.OnStopMoonwalk;
+                @StopMoonwalk.canceled += instance.OnStopMoonwalk;
+                @EnableLook.started += instance.OnEnableLook;
+                @EnableLook.performed += instance.OnEnableLook;
+                @EnableLook.canceled += instance.OnEnableLook;
+                @StopLook.started += instance.OnStopLook;
+                @StopLook.performed += instance.OnStopLook;
+                @StopLook.canceled += instance.OnStopLook;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+            }
+        }
+    }
+    public GamepadControlsActions @GamepadControls => new GamepadControlsActions(this);
     public interface IKeyboardControlsActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnStopJump(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
+        void OnStand(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
+        void OnDrawSword(InputAction.CallbackContext context);
+        void OnDrawShield(InputAction.CallbackContext context);
+        void OnBlock(InputAction.CallbackContext context);
+        void OnStopBlock(InputAction.CallbackContext context);
+        void OnMoonwalk(InputAction.CallbackContext context);
+        void OnStopMoonwalk(InputAction.CallbackContext context);
+        void OnEnableLook(InputAction.CallbackContext context);
+        void OnStopLook(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+    }
+    public interface IGamepadControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);

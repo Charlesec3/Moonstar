@@ -103,6 +103,12 @@ public class Player : MonoBehaviour
 
     public delegate void OnGamePause(bool isPaused);
     public static event OnGamePause onGamePause;
+
+
+    /// <summary>
+/// is the gamepad connected
+/// </summary>
+    public bool controllerConnected;
    
 
     void Awake()
@@ -117,9 +123,45 @@ public class Player : MonoBehaviour
 
 
         controls = new PlayerController();
-        controls.KeyboardControls.Enable();
+        if (Gamepad.all.Count >= 1)
+        {
+            controllerConnected = true;
 
+            controls.GamepadControls.Enable();
+            controls.KeyboardControls.Disable();
+        }
+        else if(Gamepad.all.Count == 0)
+        {
+            controllerConnected = false;
+
+            controls.GamepadControls.Disable();
+            controls.KeyboardControls.Enable();
+        }
+
+#region GamepadControls Binding      
+        controls.GamepadControls.Crouch.performed += ctx => crouch(true);
+        controls.GamepadControls.Stand.performed += ctx => crouch(false);
+
+        controls.GamepadControls.Jump.performed += ctx => jump();
+        controls.GamepadControls.StopJump.performed += ctx => stopJump();
+
+        controls.GamepadControls.DrawShield.performed += ctx => drawShield();
+        controls.GamepadControls.Block.performed += ctx => block(true);
+        controls.GamepadControls.StopBlock.performed += ctx => block(false);
+
+        controls.GamepadControls.Attack.performed += ctx => attack();
+        controls.GamepadControls.DrawSword.performed += ctx => drawSword();
+
+        controls.GamepadControls.Moonwalk.performed += ctx => moonwalk(true);
+        controls.GamepadControls.StopMoonwalk.performed += ctx => moonwalk(false);
         
+        controls.GamepadControls.EnableLook.performed += ctx => enableCameraMovement(true);
+        controls.GamepadControls.StopLook.performed += ctx => enableCameraMovement(false);
+
+        controls.GamepadControls.Pause.performed += ctx => pauseGame();
+#endregion
+
+#region KeyboardControls Binding
         controls.KeyboardControls.Crouch.performed += ctx => crouch(true);
         controls.KeyboardControls.Stand.performed += ctx => crouch(false);
 
@@ -140,7 +182,7 @@ public class Player : MonoBehaviour
         controls.KeyboardControls.StopLook.performed += ctx => enableCameraMovement(false);
 
         controls.KeyboardControls.Pause.performed += ctx => pauseGame();
-
+#endregion
     }
 
     // Start is called before the first frame update
@@ -231,14 +273,21 @@ public class Player : MonoBehaviour
         clearanceChecker.enabled = true;
         clearanceChecker.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1f, 0);
     
-        /*if(clearanceChecker.IsTouchingLayers(groundLayerMask) == true)
+        //check if the player if using a controller
+        if (Gamepad.all.Count >= 1)
         {
-            Debug.Log("CROUCH: touching ground");
+            controllerConnected = true;
+
+            controls.GamepadControls.Enable();
+            controls.KeyboardControls.Disable();
         }
-        else
+        else if(Gamepad.all.Count == 0)
         {
-            Debug.Log("CROUCH: not touching ground");
-        }*/
+            controllerConnected = false;
+
+            controls.GamepadControls.Disable();
+            controls.KeyboardControls.Enable();
+        }
 
 
 
