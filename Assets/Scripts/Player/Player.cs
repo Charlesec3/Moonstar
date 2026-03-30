@@ -280,6 +280,8 @@ public class Player : MonoBehaviour
 
             controls.GamepadControls.Enable();
             controls.KeyboardControls.Disable();
+
+            Debug.Log(Gamepad.all[0].name);
         }
         else if(Gamepad.all.Count == 0)
         {

@@ -26,7 +26,10 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        newGameBtn.Select();
+        if (Gamepad.all.Count >= 1)
+        {
+            newGameBtn.Select();
+        }
     }
 
     public void newGame()

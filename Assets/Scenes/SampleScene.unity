@@ -10768,6 +10768,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1651449463, guid: 92aced54c10384f078bcb89eb7730bc6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 561807387218007429, guid: 92aced54c10384f078bcb89eb7730bc6, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0.6039216
@@ -10920,6 +10924,51 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 682813731}
+    - target: {fileID: 816008443738350115, guid: 92aced54c10384f078bcb89eb7730bc6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798900851932534381, guid: 92aced54c10384f078bcb89eb7730bc6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047637780086464546, guid: 92aced54c10384f078bcb89eb7730bc6, type: 3}
+      propertyPath: m_text
+      value: '- Hold LEFT STICK BUTTON and use RIGHT STICK to look
+
+
+        - LEFT
+        STICK to move, block upwards, and climb ladders
+
+
+        - B or X to crouch
+
+
+        -
+        A to jump'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542908545176568195, guid: 92aced54c10384f078bcb89eb7730bc6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625377503336464403, guid: 92aced54c10384f078bcb89eb7730bc6, type: 3}
+      propertyPath: m_text
+      value: '- RIGHT SHOULDER to draw sword
+
+
+        - RIGHT TRIGGER to attack
+
+
+        -
+        LEFT SHOLDER to draw shield
+
+
+        - START to pause
+
+
+        - Hold LEFT
+        TRIGGER to "moonwalk"'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92aced54c10384f078bcb89eb7730bc6, type: 3}
 --- !u!1001 &1617634256097480919
