@@ -1168,6 +1168,14 @@ public class Player : MonoBehaviour
             if(knockBackCounter <= 0)
             {
                 move = controls.KeyboardControls.Movement.ReadValue<Vector2>();
+                if (Gamepad.all.Count >= 1)
+                {
+                    move = controls.GamepadControls.Movement.ReadValue<Vector2>();
+                }
+                else if(Gamepad.all.Count == 0)
+                {
+                    move = controls.KeyboardControls.Movement.ReadValue<Vector2>();
+                }
             
                 if(move != new Vector2(0,0))//player is moving
                 {

@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Hold RIGHT STICK BUTTON and use RIGHT STICK to look
+  m_text: '- Hold LEFT STICK BUTTON and use RIGHT STICK to look
 
 
     - LEFT STICK
