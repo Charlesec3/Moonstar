@@ -1044,13 +1044,17 @@ MonoBehaviour:
 
 
     - LEFT STICK
-    to move, block upwards, and climb ladders
+    to move
 
 
-    - B to crouch
+    - Y to block upwards and climb ladders
 
 
-    - A to jump'
+    - B or X to crouch
+
+
+    -
+    A to jump'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1332,7 +1336,8 @@ MonoBehaviour:
     - START to pause
 
 
-    - LEFT TRIGGER to "moonwalk"'
+    - Hold LEFT TRIGGER
+    to "moonwalk"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1424,7 +1429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &721635995
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2014,7 +2019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1154611875
 RectTransform:
   m_ObjectHideFlags: 0
