@@ -22,10 +22,10 @@ public class Shooter : EnemyBase
 
 
 
-    // Start is called before the first frame update
-    void Start()
+    
+    void shooterKilled(EnemyBase e)
     {
-        
+        Debug.Log( e.name + " killed");
     }
 
     // Update is called once per frame

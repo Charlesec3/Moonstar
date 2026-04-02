@@ -371,6 +371,7 @@ MonoBehaviour:
   obstructionChecker: {fileID: 9219488577716647418}
   healthPrefab: {fileID: 1247246418497476262, guid: 729c65b6778cd45bca8ed87eac2afbbe, type: 3}
   subjectToHeavyKnockBack: 1
+  enemyID: 222
   moveRightFirst: 0
   movingLeft: 0
   patrolDistance: 10

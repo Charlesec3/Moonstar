@@ -41,6 +41,7 @@ public abstract class EnemyBase : MonoBehaviour
     /// </summary>
     public bool subjectToHeavyKnockBack = true;
 
+    public int enemyID;
 
 
     public void takeDamage(float dmg)
@@ -49,6 +50,8 @@ public abstract class EnemyBase : MonoBehaviour
 
         if(currentHP <= 0)
         {
+            QuestManager.instance.enemyDied(this);
+            
             if(Random.Range(1,5) == 1)
             {
                 health = Instantiate(healthPrefab,this.transform.position,this.transform.rotation);

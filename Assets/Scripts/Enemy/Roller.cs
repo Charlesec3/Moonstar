@@ -35,6 +35,11 @@ public class Roller : EnemyBase
         movingLeft = moveRightFirst;
     }
 
+    void shooterKilled(EnemyBase e)
+    {
+        Debug.Log( e.name + " killed");
+    }
+
     void FixedUpdate()
     {
         move();
