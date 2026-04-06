@@ -20,5 +20,8 @@ public class HoundHunter : Quest
         goals.Add(new KillGoal(QuestManager.instance.enemyIds["Hound"], mainObj, false, 0, 5));
 
         QuestManager.instance.quests.Add(this);
+        QuestManager.instance.questIds.Add(questName, this);
+
+        //setState(QuestState.Accepted);
     }
 }

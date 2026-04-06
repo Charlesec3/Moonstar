@@ -18,6 +18,8 @@ public class KillGoal : QuestGoal
     public override void initialize()
     {
        QuestManager.onEnemyKilled += enemyDied;
+
+       progress = "(0/0)";
     }
 
     void enemyDied(EnemyBase e)

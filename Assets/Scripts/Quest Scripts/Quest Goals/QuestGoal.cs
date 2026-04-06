@@ -13,6 +13,8 @@ public class QuestGoal
     public int currentAmount;
     public int requiredAmount;
 
+    public string progress;
+
 
     public virtual void initialize()
     {
@@ -27,6 +29,9 @@ public class QuestGoal
     public void increaseCurrentAmount(int increaseBy)
     {
         currentAmount += increaseBy;
+
+        progress = "(" + currentAmount + "/" + requiredAmount + ")";
+        
         evaluate();
     }
 }

@@ -21,5 +21,6 @@ public class KillTheSkellyman : Quest
         goals.Add(new KillGoal(QuestManager.instance.enemyIds["Skellyman"], mainObj, false, 0, 1));
 
         QuestManager.instance.quests.Add(this);
+        QuestManager.instance.questIds.Add(questName, this);
     }
 }
