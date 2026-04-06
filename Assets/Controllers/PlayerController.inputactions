@@ -139,6 +139,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Open Quest Menu",
+                    "type": "Button",
+                    "id": "eeab9d76-c1c4-4832-b208-9d5e4ecda0a2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -328,6 +337,17 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12dfea2b-f41e-47c5-984b-857451bfe412",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Open Quest Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -465,6 +485,15 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "30d3df3b-fc9d-416b-b982-0087cc5442e9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Open Quest Menu",
+                    "type": "Button",
+                    "id": "4b9b34fd-3952-429b-a3b4-cb88ccecd588",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -779,6 +808,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "bb9c86e7-49f7-41bc-a68a-af52e87b0440",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Open Quest Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

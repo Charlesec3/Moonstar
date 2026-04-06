@@ -161,6 +161,15 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Open Quest Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""eeab9d76-c1c4-4832-b208-9d5e4ecda0a2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -350,6 +359,17 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""12dfea2b-f41e-47c5-984b-857451bfe412"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open Quest Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -487,6 +507,15 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""30d3df3b-fc9d-416b-b982-0087cc5442e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Open Quest Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""4b9b34fd-3952-429b-a3b4-cb88ccecd588"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -801,6 +830,17 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb9c86e7-49f7-41bc-a68a-af52e87b0440"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open Quest Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -936,6 +976,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_KeyboardControls_EnableLook = m_KeyboardControls.FindAction("Enable Look", throwIfNotFound: true);
         m_KeyboardControls_StopLook = m_KeyboardControls.FindAction("Stop Look", throwIfNotFound: true);
         m_KeyboardControls_Pause = m_KeyboardControls.FindAction("Pause", throwIfNotFound: true);
+        m_KeyboardControls_OpenQuestMenu = m_KeyboardControls.FindAction("Open Quest Menu", throwIfNotFound: true);
         // GamepadControls
         m_GamepadControls = asset.FindActionMap("GamepadControls", throwIfNotFound: true);
         m_GamepadControls_Movement = m_GamepadControls.FindAction("Movement", throwIfNotFound: true);
@@ -953,6 +994,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         m_GamepadControls_EnableLook = m_GamepadControls.FindAction("Enable Look", throwIfNotFound: true);
         m_GamepadControls_StopLook = m_GamepadControls.FindAction("Stop Look", throwIfNotFound: true);
         m_GamepadControls_Pause = m_GamepadControls.FindAction("Pause", throwIfNotFound: true);
+        m_GamepadControls_OpenQuestMenu = m_GamepadControls.FindAction("Open Quest Menu", throwIfNotFound: true);
         // GamepadMouseControls
         m_GamepadMouseControls = asset.FindActionMap("GamepadMouseControls", throwIfNotFound: true);
         m_GamepadMouseControls_Movement = m_GamepadMouseControls.FindAction("Movement", throwIfNotFound: true);
@@ -1032,6 +1074,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_KeyboardControls_EnableLook;
     private readonly InputAction m_KeyboardControls_StopLook;
     private readonly InputAction m_KeyboardControls_Pause;
+    private readonly InputAction m_KeyboardControls_OpenQuestMenu;
     public struct KeyboardControlsActions
     {
         private @PlayerController m_Wrapper;
@@ -1051,6 +1094,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @EnableLook => m_Wrapper.m_KeyboardControls_EnableLook;
         public InputAction @StopLook => m_Wrapper.m_KeyboardControls_StopLook;
         public InputAction @Pause => m_Wrapper.m_KeyboardControls_Pause;
+        public InputAction @OpenQuestMenu => m_Wrapper.m_KeyboardControls_OpenQuestMenu;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1105,6 +1149,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_KeyboardControlsActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_KeyboardControlsActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_KeyboardControlsActionsCallbackInterface.OnPause;
+                @OpenQuestMenu.started -= m_Wrapper.m_KeyboardControlsActionsCallbackInterface.OnOpenQuestMenu;
+                @OpenQuestMenu.performed -= m_Wrapper.m_KeyboardControlsActionsCallbackInterface.OnOpenQuestMenu;
+                @OpenQuestMenu.canceled -= m_Wrapper.m_KeyboardControlsActionsCallbackInterface.OnOpenQuestMenu;
             }
             m_Wrapper.m_KeyboardControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -1154,6 +1201,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @OpenQuestMenu.started += instance.OnOpenQuestMenu;
+                @OpenQuestMenu.performed += instance.OnOpenQuestMenu;
+                @OpenQuestMenu.canceled += instance.OnOpenQuestMenu;
             }
         }
     }
@@ -1177,6 +1227,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamepadControls_EnableLook;
     private readonly InputAction m_GamepadControls_StopLook;
     private readonly InputAction m_GamepadControls_Pause;
+    private readonly InputAction m_GamepadControls_OpenQuestMenu;
     public struct GamepadControlsActions
     {
         private @PlayerController m_Wrapper;
@@ -1196,6 +1247,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         public InputAction @EnableLook => m_Wrapper.m_GamepadControls_EnableLook;
         public InputAction @StopLook => m_Wrapper.m_GamepadControls_StopLook;
         public InputAction @Pause => m_Wrapper.m_GamepadControls_Pause;
+        public InputAction @OpenQuestMenu => m_Wrapper.m_GamepadControls_OpenQuestMenu;
         public InputActionMap Get() { return m_Wrapper.m_GamepadControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1250,6 +1302,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnPause;
+                @OpenQuestMenu.started -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnOpenQuestMenu;
+                @OpenQuestMenu.performed -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnOpenQuestMenu;
+                @OpenQuestMenu.canceled -= m_Wrapper.m_GamepadControlsActionsCallbackInterface.OnOpenQuestMenu;
             }
             m_Wrapper.m_GamepadControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -1299,6 +1354,9 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @OpenQuestMenu.started += instance.OnOpenQuestMenu;
+                @OpenQuestMenu.performed += instance.OnOpenQuestMenu;
+                @OpenQuestMenu.canceled += instance.OnOpenQuestMenu;
             }
         }
     }
@@ -1369,6 +1427,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnEnableLook(InputAction.CallbackContext context);
         void OnStopLook(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnOpenQuestMenu(InputAction.CallbackContext context);
     }
     public interface IGamepadControlsActions
     {
@@ -1387,6 +1446,7 @@ public partial class @PlayerController : IInputActionCollection2, IDisposable
         void OnEnableLook(InputAction.CallbackContext context);
         void OnStopLook(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnOpenQuestMenu(InputAction.CallbackContext context);
     }
     public interface IGamepadMouseControlsActions
     {

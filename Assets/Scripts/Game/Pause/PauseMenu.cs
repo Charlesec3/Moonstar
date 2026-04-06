@@ -8,12 +8,14 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject controlsScreen;
     [SerializeField] GameObject settingsScreen;
+    [SerializeField] GameObject questScreen;
 
     [SerializeField] GameObject keyboardControls;
     [SerializeField] GameObject gamepadControls;
 
     [SerializeField] Button controlsBtn;
     [SerializeField] Button settingsBtn;
+    [SerializeField] Button questBtn;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +26,13 @@ public class PauseMenu : MonoBehaviour
     void OnEnable()
     {
         activateButton();
+
+        Player.onGamePause += resetMenu;
+    }
+
+    void OnDisable()
+    {
+        //Player.onGamePause -= resetMenu;
     }
     // Update is called once per frame
     void Update()
@@ -40,15 +49,27 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    void resetMenu(bool b)
+    {
+        controlsScreen.SetActive(true);
+
+        settingsScreen.SetActive(false);
+        questScreen.SetActive(false);
+    }
+
     public void activateButton()
     {
         if(controlsScreen.activeSelf == true)
         {
             settingsBtn.Select();
         }
-        else
+        else if(settingsScreen.activeSelf == true)
         {
             controlsBtn.Select();
+        }
+        else if(questScreen.activeSelf == true)
+        {
+            questBtn.Select();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
+using TMPro;
 
 public class QuestManager : MonoBehaviour
 {
@@ -16,6 +17,20 @@ public class QuestManager : MonoBehaviour
 
     public List<string> questSaveData;
     public string questSaveDataString;
+
+    [SerializeField] private QuestLoader[] loaders;
+
+    public TextMeshProUGUI questName;
+    public TextMeshProUGUI questGiver;
+    public TextMeshProUGUI questLocation;
+
+    public TextMeshProUGUI questDescription;
+
+    public TextMeshProUGUI pgDisplay;
+
+    public int currentPg;
+    [SerializeField] private int totalPg;
+
 
     
     public Dictionary<string, int> enemyIds = new Dictionary<string, int>
@@ -40,6 +55,9 @@ public class QuestManager : MonoBehaviour
     {
         instance = this;
     }
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +70,105 @@ public class QuestManager : MonoBehaviour
         
     }
 
+
+    public void openQuestMenu()
+    {
+        for (int i = 0; i < loaders.Length; i++)
+        {
+            loaders[i].clearButton();
+        }
+
+        questName.text = "";
+        questGiver.text = "";
+        questLocation.text = "";
+        questDescription.text = "";
+
+
+        currentPg = 1;
+
+        if(activeQuest.Count > loaders.Length)
+        {
+            totalPg = activeQuest.Count / loaders.Length;
+
+            if (activeQuest.Count % loaders.Length != 0)
+            {
+                ++totalPg;
+            }
+        }
+        else
+        {
+            totalPg = 1;
+        }
+
+        pgDisplay.text = currentPg.ToString() + " / " + totalPg.ToString();
+
+        setLoaders();
+    }
+
+    public void setLoaders()
+    {
+        if(activeQuest.Count > 0)
+        {
+            for (int i = 0; i < loaders.Length; i++)
+            {
+                loaders[i].gameObject.SetActive(true);
+            }
+
+            for (int i = 0; i < loaders.Length; i++)
+            {
+                loaders[i].clearButton();
+            }
+
+            int startIndex = (currentPg - 1) * loaders.Length;
+            int loadNum = 0;
+
+            for (int i = startIndex; loadNum < loaders.Length; i++)
+            {
+                if (i > activeQuest.Count - 1)
+                {
+                    break;
+                }
+                else
+                {
+                    loaders[loadNum].quest = activeQuest[i];
+                    loaders[loadNum].setButton();
+                    ++loadNum;
+                }
+            }  
+        }
+
+        for (int i = 0; i < loaders.Length; i++)
+        {
+            if(loaders[i].quest == null)
+            { 
+                loaders[i].gameObject.SetActive(false);
+            }
+        }  
+    } 
+
+    public void pressRightBtn()
+    {
+        if(currentPg < totalPg)
+        {
+            ++currentPg;
+
+            setLoaders();
+
+            pgDisplay.text = currentPg + " / " + totalPg;
+        }
+    }
+
+    public void pressLeftBtn()
+    {
+        if (currentPg > 1)
+        {
+            --currentPg;
+
+            setLoaders();
+
+            pgDisplay.text = currentPg + " / " + totalPg;
+        }
+    }
 
     public void enemyDied(EnemyBase e)
     {
@@ -105,6 +222,14 @@ public class QuestManager : MonoBehaviour
             {
                 QuestData qd1 = JsonUtility.FromJson<QuestData>(questSaveData[i]);
                 questIds[qd1.questName].loadQuest(qd1);
+            }
+
+            foreach(Quest value in quests)
+            {
+                if(value.state == Quest.QuestState.Accepted)
+                {
+                    activeQuest.Add(value);
+                }
             }
         }
     }

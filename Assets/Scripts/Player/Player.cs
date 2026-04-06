@@ -159,6 +159,8 @@ public class Player : MonoBehaviour
         controls.GamepadControls.StopLook.performed += ctx => enableCameraMovement(false);
 
         controls.GamepadControls.Pause.performed += ctx => pauseGame();
+
+        //controls.GamepadControls.OpenQuestMenu.performed += ctx => openQuestMenu();
 #endregion
 
 #region KeyboardControls Binding
@@ -182,6 +184,8 @@ public class Player : MonoBehaviour
         controls.KeyboardControls.StopLook.performed += ctx => enableCameraMovement(false);
 
         controls.KeyboardControls.Pause.performed += ctx => pauseGame();
+
+        //controls.KeyboardControls.OpenQuestMenu.performed += ctx => openQuestMenu();
 #endregion
     }
 
