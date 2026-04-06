@@ -64,6 +64,12 @@ public class Quest : MonoBehaviour
                     {
                         value.initialize();
                     }
+
+                    QuestManager.instance.activeQuest.Add(this);
+                }
+                else if(newState == QuestState.Completed)
+                {
+                    QuestManager.instance.activeQuest.Remove(this);
                 }
             }
             else

@@ -19,7 +19,7 @@ public class KillGoal : QuestGoal
     {
        QuestManager.onEnemyKilled += enemyDied;
 
-       progress = "(0/0)";
+       progress = "(0/" + requiredAmount + ")";
     }
 
     void enemyDied(EnemyBase e)

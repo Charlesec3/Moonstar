@@ -22,5 +22,7 @@ public class KillTheSkellyman : Quest
 
         QuestManager.instance.quests.Add(this);
         QuestManager.instance.questIds.Add(questName, this);
+
+        setState(QuestState.Accepted);
     }
 }
