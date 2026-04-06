@@ -31,6 +31,8 @@ public class QuestManager : MonoBehaviour
     public int currentPg;
     [SerializeField] private int totalPg;
 
+    [SerializeField] GameObject noQuestObj;
+
 
     
     public Dictionary<string, int> enemyIds = new Dictionary<string, int>
@@ -109,6 +111,8 @@ public class QuestManager : MonoBehaviour
     {
         if(activeQuest.Count > 0)
         {
+            noQuestObj.SetActive(false);
+
             for (int i = 0; i < loaders.Length; i++)
             {
                 loaders[i].gameObject.SetActive(true);
@@ -135,6 +139,10 @@ public class QuestManager : MonoBehaviour
                     ++loadNum;
                 }
             }  
+        }
+        else
+        {
+            noQuestObj.SetActive(true);
         }
 
         for (int i = 0; i < loaders.Length; i++)
