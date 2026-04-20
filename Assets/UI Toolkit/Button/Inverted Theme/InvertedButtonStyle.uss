@@ -1,0 +1,27 @@
+.button-color-highlighted:hover {
+    background-color: rgba(101, 101, 101, 255);
+}
+
+.button-color-pressed:active {
+    background-color: rgba(123, 123, 123, 255);
+}
+
+.button-color-selected:checked {
+    background-color: rgba(0, 255, 255, 255);
+}
+
+.button-color-text {
+    color: rgba(255, 255, 255, 255);
+}
+
+.button-color-secondary {
+    color: rgba(0, 0, 0, 255);
+    background-color: rgba(255, 0, 238, 255);
+}
+
+.button-color-border {
+    border-left-color: rgba(255, 255, 255, 255);
+    border-right-color: rgba(255, 255, 255, 255);
+    border-top-color: rgba(255, 255, 255, 255);
+    border-bottom-color: rgba(255, 255, 255, 255);
+}

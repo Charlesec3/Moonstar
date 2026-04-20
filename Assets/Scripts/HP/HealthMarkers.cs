@@ -15,14 +15,14 @@ public class HealthMarkers : MonoBehaviour
     {
         Player.onPlayerTakeDamage += removeHealthMarkers;
         Player.onPlayerGainHP += addHealthMarkers;
-        Player.onGamePause += toggleDisplay;
+        //Player.onGamePause += toggleDisplay;
     }
 
     void OnDisable()
     {
         Player.onPlayerTakeDamage -= removeHealthMarkers;
         Player.onPlayerGainHP -= addHealthMarkers;
-        Player.onGamePause -= toggleDisplay;
+        //Player.onGamePause -= toggleDisplay;
     }
 
     void removeHealthMarkers(float dmg)

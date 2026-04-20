@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject controlsScreen;
     [SerializeField] GameObject settingsScreen;
-    [SerializeField] GameObject questScreen;
+    public GameObject questScreen;
 
     [SerializeField] GameObject keyboardControls;
     [SerializeField] GameObject gamepadControls;
@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
     {
         activateButton();
 
-        Player.onGamePause += resetMenu;
+        //Player.onGamePause += resetMenu;
     }
 
     void OnDisable()
@@ -49,7 +49,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void resetMenu(bool b)
+    public void resetMenu(bool b)
     {
         controlsScreen.SetActive(true);
 
@@ -71,5 +71,15 @@ public class PauseMenu : MonoBehaviour
         {
             questBtn.Select();
         }
+    }
+
+    public GameObject getControlsScreen()
+    {
+        return controlsScreen;
+    }
+
+    public GameObject getSettingsScreen()
+    {
+        return settingsScreen;
     }
 }

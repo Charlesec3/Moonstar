@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/ButtonStyle.uss?fileID=7433441132597879392&amp;guid=aa06e5a9195404e418f9447d0b016ba0&amp;type=3#ButtonStyle" />
+    <ui:VisualElement name="Container">
+        <ui:Button text="Button" display-tooltip-when-elided="true" class="border-size-standard button-color-border button-color-primary button-color-text button-size-standard button-motion-shrink button-color-highlighted button-color-pressed button-color-selected button-motion-grow font-body spacing-medium" />
+    </ui:VisualElement>
+</ui:UXML>

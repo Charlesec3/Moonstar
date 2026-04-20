@@ -30,6 +30,8 @@ public class MainMenu : MonoBehaviour
         {
             newGameBtn.Select();
         }
+
+        //UIAnimation.instance.gameStartFadeIn();
     }
 
     public void newGame()

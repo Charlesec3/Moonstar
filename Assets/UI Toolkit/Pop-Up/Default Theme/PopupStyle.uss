@@ -1,0 +1,71 @@
+.header {
+    -unity-font: url('project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&guid=e3265ab4bf004d28a9537516768c1c75&type=3#LiberationSans');
+    font-size: 70px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+}
+
+.button {
+    -unity-font: url('project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&guid=e3265ab4bf004d28a9537516768c1c75&type=3#LiberationSans');
+    font-size: 20px;
+    -unity-text-align: middle-center;
+    background-color: rgb(0, 255, 17);
+    transition-duration: 0.35s;
+    color: rgb(0, 0, 0);
+}
+
+.button:hover {
+    scale: 1.1 1.1;
+    background-color: rgb(154, 154, 154);
+}
+
+.button:checked {
+    background-color: rgb(255, 0, 0);
+    scale: 1.1 1.1;
+}
+
+.button:active {
+    background-color: rgb(132, 132, 132);
+    scale: 0.9 0.9;
+}
+
+.body {
+    -unity-font: url('project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&guid=e3265ab4bf004d28a9537516768c1c75&type=3#LiberationSans');
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.spacing-medium {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.spacing-large {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.popup-size {
+    width: 406px;
+    height: 480px;
+}
+
+.popup-color {
+    background-color: rgba(76, 76, 76, 255);
+}
+
+.button-position {
+    position: absolute;
+    left: 75px;
+    top: 350px;
+}
+
+.body-position {
+    top: 10px;
+}

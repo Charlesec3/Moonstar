@@ -328,7 +328,7 @@ public class Player : MonoBehaviour
         CameraController.instance.setMoveableCamera(b);
     }
 
-    void pauseGame()
+    async void pauseGame()
     {
         paused = !paused;
 
@@ -345,15 +345,26 @@ public class Player : MonoBehaviour
             //canAttack = false;
 
             pauseMenu.SetActive(true);
+            UIAnimation.instance.pauseIntro();
         }
         else
         {
+            await UIAnimation.instance.pauseOutro();
+
             Time.timeScale = 1;
             //canMove = true;
             //canCrouch = true;
             //canAttack = true;
 
             pauseMenu.SetActive(false);
+
+            RectTransform rt = pauseMenu.GetComponent<RectTransform>();
+            /*right*/rt.offsetMax = new Vector2(rt.offsetMax.x, -23.30029f);
+            /*left*/ rt.offsetMin= new Vector2(rt.offsetMin.x, 23.30042f);
+            /*bottom*/ rt.offsetMin = new Vector2(rt.offsetMin.y, 457.9315f);
+            /*top*/rt.offsetMax = new Vector2(rt.offsetMax.y, 420.0685f);
+
+            pauseMenu.GetComponent<PauseMenu>().questScreen.GetComponent<RectTransform>().anchoredPosition = new Vector2(800,  pauseMenu.GetComponent<PauseMenu>().questScreen.GetComponent<RectTransform>().anchoredPosition.y);
         }
     }
 

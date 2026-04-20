@@ -1,0 +1,64 @@
+.button-color-primary {
+    background-color: rgba(255, 255, 255, 255);
+}
+
+.button-color-text {
+    color: rgba(0, 0, 0, 255);
+}
+
+.button-color-border {
+    border-left-color: rgba(0, 0, 0, 255);
+    border-right-color: rgba(0, 0, 0, 255);
+    border-top-color: rgba(0, 0, 0, 255);
+    border-bottom-color: rgba(0, 0, 0, 255);
+}
+
+.border-size-standard {
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+}
+
+.button-size-standard {
+    width: 220px;
+    height: 60px;
+}
+
+.button-motion-grow:hover {
+    scale: 1.1 1.1;
+    transition-duration: 0.2s;
+}
+
+.button-motion-shrink:active {
+    scale: 0.9 0.9;
+}
+
+.button-motion-duration {
+    transition-duration: 0.2s;
+}
+
+.button-color-highlighted:hover {
+    background-color: rgba(154, 154, 154, 255);
+}
+
+.button-color-pressed:active {
+    background-color: rgba(132, 132, 132, 255);
+}
+
+.button-color-selected:checked {
+    background-color: rgba(255, 0, 0, 255);
+    scale: 1.1 1.1;
+}
+
+.font-body {
+    font-size: 20px;
+    -unity-font: url('project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&guid=e3265ab4bf004d28a9537516768c1c75&type=3#LiberationSans');
+}
+
+.spacing-medium {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

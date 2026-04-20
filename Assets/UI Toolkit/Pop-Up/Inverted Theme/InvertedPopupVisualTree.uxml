@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Pop-Up/Default%20Theme/PopupStyle.uss?fileID=7433441132597879392&amp;guid=7d090644519d64fd4a5874a371185c85&amp;type=3#PopupStyle" />
+    <Style src="project://database/Assets/UI%20Toolkit/Pop-Up/Inverted%20Theme/InvertedPopupStyle.uss?fileID=7433441132597879392&amp;guid=7930882d822f34ec5bb11b3c1b6abd36&amp;type=3#InvertedPopupStyle" />
+    <Style src="project://database/Assets/UI%20Toolkit/Button/Default%20Theme/ButtonStyle.uss?fileID=7433441132597879392&amp;guid=aa06e5a9195404e418f9447d0b016ba0&amp;type=3#ButtonStyle" />
+    <Style src="project://database/Assets/UI%20Toolkit/Button/Inverted%20Theme/InvertedButtonStyle.uss?fileID=7433441132597879392&amp;guid=65e03359be65c479e82fef796cb08199&amp;type=3#InvertedButtonStyle" />
+    <ui:VisualElement name="Container" class="popup-size popup-color button-color-border border-size-standard spacing-medium" style="width: 406px; height: 480px;">
+        <ui:Label text="Header" display-tooltip-when-elided="true" name="Header" class="header spacing-medium popup-color-text" />
+        <ui:Label text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ipsum urna, eleifend et malesuada a, sollicitudin id risus. Proin ornare purus libero, eget eleifend justo pharetra et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas." display-tooltip-when-elided="true" name="Body" class="body spacing-medium popup-color-text body-position" style="height: 145px;" />
+        <ui:Button text="Button" display-tooltip-when-elided="true" class="spacing-medium border-size-standard button-size-standard button-motion-grow button-motion-shrink button-motion-duration font-body button-color-highlighted button-color-pressed button-color-selected button-color-secondary button-color-border button-position button-color-text" style="color: rgb(0, 0, 0);" />
+    </ui:VisualElement>
+</ui:UXML>
