@@ -63,6 +63,7 @@ public class UIAnimation : MonoBehaviour
 
         HPMarkers.DOAnchorPosX(-200, pauseIntroDuration).SetEase(Ease.InOutSine).SetUpdate(true);
 
+        pauseStateFilter.gameObject.SetActive(true);
         pauseStateFilter.DOFade(.7f,pauseIntroDuration).SetEase(Ease.InOutSine).SetUpdate(true);
     }
 
@@ -140,6 +141,8 @@ public class UIAnimation : MonoBehaviour
 
     public async void openQuestMenu()
     {
+        pauseStateFilter.gameObject.SetActive(false);
+
         questMenu.gameObject.SetActive(true);
         await questIntro();
 
@@ -150,6 +153,8 @@ public class UIAnimation : MonoBehaviour
 
     public async void closeQuestMenu()
     {
+        pauseStateFilter.gameObject.SetActive(true);
+
         pauseMenuGO.gameObject.SetActive(true);
         await questOutro();
 
