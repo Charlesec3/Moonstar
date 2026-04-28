@@ -58,7 +58,8 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void activateButton()
-    {
+    { 
+        Debug.Log("PAUSE: activateButton() called");
         if(controlsScreen.activeSelf == true)
         {
             settingsBtn.Select();

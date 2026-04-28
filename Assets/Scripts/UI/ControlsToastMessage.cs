@@ -104,7 +104,11 @@ public class ControlsToastMessage : MonoBehaviour
 
     IEnumerator retractMessage()
     {
-        yield return new WaitForSeconds(waitTime);
+        //Debug.Log("TOAST: called retract");
+
+        yield return new WaitForSecondsRealtime(waitTime);
+
+        //Debug.Log("TOAST: post wait");
 
         //bottom
         //DOTween.To(() => messageGameobject.offsetMin, x => messageGameobject.offsetMin = x, new Vector2(messageGameobject.offsetMin.x, 445f), movementDuration).SetEase(Ease.InOutSine).SetUpdate(true);

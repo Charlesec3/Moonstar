@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+
 //using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -92,8 +94,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] private AudioSource[] healthSounds;
 
+    [SerializeField] float rumbleTime = .25f;
+
     [SerializeField] GameObject pauseMenu;
     public bool paused = false;
+    [SerializeField] AudioSource pauseAudio;
+
+    [SerializeField] AudioSource questScreenAudio;
 
     public delegate void OnPlayerTakeDamage(float damage);
     public static event OnPlayerTakeDamage onPlayerTakeDamage;
@@ -345,10 +352,19 @@ public class Player : MonoBehaviour
             //canAttack = false;
 
             pauseMenu.SetActive(true);
+            pauseAudio.Play();
             UIAnimation.instance.pauseIntro();
         }
         else
         {
+            if(pauseAudio.gameObject.activeSelf == true)
+            {
+                pauseAudio.Play();
+            }
+            else if(questScreenAudio.gameObject.activeSelf == true)
+            {
+                questScreenAudio.Play();
+            }
             await UIAnimation.instance.pauseOutro();
 
             Time.timeScale = 1;
@@ -565,7 +581,7 @@ public class Player : MonoBehaviour
     void stopJump()
     {
         //variable jump height
-        if(rb.velocity.y > 0)
+        if(rb != null && rb.velocity.y > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * .5f);
 
@@ -868,6 +884,22 @@ public class Player : MonoBehaviour
         }
         int r = Random.Range(0, 3);
         damageSounds[r].Play();
+
+        if (Gamepad.all.Count >= 1)
+        {
+            StartCoroutine(controllerRumble());
+        }
+    }
+
+    IEnumerator controllerRumble()
+    {
+        Debug.Log("CONTROLLER RUMBLE");
+        
+        Gamepad.current.SetMotorSpeeds(0.25f, 0.75f);
+
+        yield return new WaitForSeconds(rumbleTime);
+
+        InputSystem.ResetHaptics();
     }
 
     /// <summary>

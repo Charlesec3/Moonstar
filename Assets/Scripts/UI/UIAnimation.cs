@@ -148,7 +148,7 @@ public class UIAnimation : MonoBehaviour
 
         pauseMenuGO.gameObject.SetActive(false);
 
-        pauseMenuGO.gameObject.GetComponent<PauseMenu>().activateButton();
+        //pauseMenuGO.gameObject.GetComponent<PauseMenu>().activateButton();
     }
 
     public async void closeQuestMenu()
