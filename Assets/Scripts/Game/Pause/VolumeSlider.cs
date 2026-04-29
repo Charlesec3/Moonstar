@@ -25,7 +25,7 @@ public class VolumeSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     bool closeCheck = false;
 
     
-    void Start()
+    void Awake()
     {
         slider = this.gameObject.GetComponent<Slider>();
 
@@ -62,7 +62,7 @@ public class VolumeSlider : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void updateValueDisplay()
     {
-        valueDispalyText.text =  Mathf.RoundToInt(slider.value).ToString();
+        //valueDispalyText.text =  Mathf.RoundToInt(slider.value).ToString();
     }
 
     async void closeDisplay()
